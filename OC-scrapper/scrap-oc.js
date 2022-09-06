@@ -30,12 +30,14 @@ function displayProjects(contents) {
   for (var i = 0 ; i < projectDataObject.length; i++) {
     console.log(i);
     //building the proper URLs and title :
-    var projectURL = "https://openclassrooms.com/fr/projects/" + projectDataObject[i].value + "/assignment";
-    var editURL = "https://openclassrooms.com/fr/admin/projects/" + projectDataObject[i].value + "/edit";  
-    var projectTitle = projectDataObject[i].label;
+    var projectID = projectDataObject[i].value;
+    var projectURL = "https://openclassrooms.com/fr/projects/" + projectID + "/assignment";
+    var editURL = "https://openclassrooms.com/fr/admin/projects/" + projectID + "/edit";  
+    var replaceString = ` (${projectID})`;
+    var projectTitle = projectDataObject[i].label.replace(replaceString, "");
     
     //Creating element for the project to add to the list
-    var projectElemString = `<li>P${i+1} : <a href="${projectURL}">${projectTitle}</a> - <a href="${editURL}">edit link</a></li>`;
+    var projectElemString = `<li>P${i+1} (${projectID}) : <a href="${projectURL}">${projectTitle}</a> - <a href="${editURL}">edit link</a></li>`;
     var projectElem = jQuery(projectElemString);
     projectListElem.append(projectElem);
   }
