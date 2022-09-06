@@ -21,7 +21,7 @@ function createPathTitleElement(pathTitle, pathID) {
   var pathEditURL = `https://openclassrooms.com/fr/admin/paths/${pathID}/edit`;
 
   //Creating element for the path and add to DOM
-  var pathElemString = `<a href="${pathURL}">${pathTitle}</a> - <a href="${pathEditURL}">edit link</a>`;
+  var pathElemString = `<a href="${pathURL}">${pathTitle}</a> (${pathID}) - <a href="${pathEditURL}">edit link</a>`;
   var pathElem = jQuery(pathElemString);
 
   jQuery('#path_container').append(pathElem);
