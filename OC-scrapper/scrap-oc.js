@@ -35,7 +35,7 @@ function displayProjects(contents) {
     var projectTitle = projectDataObject[i].label;
     
     //Creating element for the project to add to the list
-    var projectElemString = `<li>P${i} : <a href="${projectURL}">${projectTitle}</a> - <a href="${editURL}">edit link</a></li>`;
+    var projectElemString = `<li>P${i+1} : <a href="${projectURL}">${projectTitle}</a> - <a href="${editURL}">edit link</a></li>`;
     var projectElem = jQuery(projectElemString);
     projectListElem.append(projectElem);
   }
