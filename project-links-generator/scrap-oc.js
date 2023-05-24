@@ -34,7 +34,7 @@ function createProjectList(projectDataObject) {
     //building the proper URLs and title :
     var projectID = projectDataObject[i].value;
     var projectURL = "https://openclassrooms.com/fr/projects/" + projectID + "/assignment";
-    var editURL = "https://openclassrooms.com/fr/admin/projects/" + projectID + "/edit";  
+    var editURL = "https://openclassrooms.com/fr/admin/projects/" + projectID + "/overview-edit";  
     var replaceString = ` (${projectID})`;
     var projectTitle = projectDataObject[i].label.replace(replaceString, "");
     
